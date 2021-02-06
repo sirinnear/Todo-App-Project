@@ -1,0 +1,22 @@
+body {
+    background-color: rgb(191, 227, 255);
+    color: #636363;
+}
+
+.outer-container {
+    margin: 50px 300px;
+    background-color: white;
+    border: white solid 9px;
+    border-radius: 10px;
+}
+
+.inner-container {
+    background-color: rgba(191, 227, 255, 0.41);
+    border: white solid 1px;
+    border-radius: 5px;
+    font-family: Verdana;
+    font-size: 15px;
+    border-radius-inner: 3px;
+}
+
+
