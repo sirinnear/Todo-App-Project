@@ -1,6 +1,9 @@
 <template>
     <div class="outer-container">
-        <input type="text" placeholder="What are you going to do?">
+        <div class="inner-container">
+            <h1>Todos</h1>
+            <input type="text" placeholder="What are you going to do?">
+        </div>
     </div>
 </template>
 
@@ -12,12 +15,21 @@
 
 <style scoped>
     .outer-container {
-        margin: 100px 300px;
+        margin: 50px 200px;
     }
-    /*input[type=text] {*/
-    /*    box-sizing: border-box;*/
-    /*    width: 100%;*/
-    /*    outline: none;*/
-    /*    border: white solid 1px;*/
-    /*}*/
+
+    .inner-container {
+        padding: 10px 100px;
+    }
+
+    h1 {
+        text-align: center;
+    }
+    input[type=text] {
+        height: 40px;
+        font-size: 18px;
+        /*border: white solid 1px;*/
+        /*border-radius: 5px;*/
+        /*background-color: rgba(202, 202, 202, 0.24);*/
+    }
 </style>

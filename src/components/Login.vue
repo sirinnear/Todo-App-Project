@@ -56,7 +56,7 @@
         font-size: inherit;
         font-family: inherit;
         color: white;
-        background-color: rgba(149, 149, 149, 0.51);
+        background-color: rgba(110, 112, 178, 0.51);
         border: rgba(99, 99, 99, 0.39) solid 2px;
         border-radius: 5px;
     }
