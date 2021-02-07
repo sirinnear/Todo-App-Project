@@ -13,6 +13,7 @@
                 <input type="password">
             </div>
             <button class="button">Login</button>
+            <button class="button" style="margin: 0px">Register</button>
         </div>
     </div>
 </template>
@@ -29,13 +30,13 @@
     }
 
     .input-container {
-        margin: 15px;
+        margin: 10px 30px;
     }
 
     .input-container input {
         box-sizing: border-box;
         width: 100%;
-        height: 30px;
+        height: 35px;
         border-radius: 10px;
         border: rgba(99, 99, 99, 0.39) solid 2px;
         font-family: inherit;
@@ -46,13 +47,13 @@
     .input-container input, label {
         padding: 10px;
         margin: 10px 0px;
-        font-size: 15px;
+        font-size: inherit;
     }
 
     button {
         padding: 10px;
-        margin: 0px 15px 10px 30px;
-        font-size: 20px;
+        margin: 0px 10px 20px 30px;
+        font-size: inherit;
         font-family: inherit;
         color: white;
         background-color: rgba(149, 149, 149, 0.51);
