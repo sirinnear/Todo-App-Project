@@ -33,3 +33,12 @@ input[type=text], input[type=password] {
     padding: 10px;
 }
 
+.task {
+    box-sizing: border-box;
+    width: 100%;
+    background-color: white;
+    height: 35px;
+    padding: 10px;
+    border-radius: 10px;
+}
+

@@ -3,13 +3,17 @@
         <div class="inner-container">
             <h1>Todos</h1>
             <input type="text" placeholder="What are you going to do?">
+            <TaskList/>
         </div>
     </div>
 </template>
 
 <script>
+    import TaskList from '@/components/TaskList';
+
     export default {
-        name: "Todo"
+        name: "Todo",
+        components: {TaskList}
     }
 </script>
 
