@@ -33,16 +33,16 @@
         margin: 10px 30px;
     }
 
-    .input-container input {
-        box-sizing: border-box;
-        width: 100%;
-        height: 35px;
-        border-radius: 10px;
-        border: rgba(99, 99, 99, 0.39) solid 2px;
-        font-family: inherit;
-        color: inherit;
-        outline: none;
-    }
+    /*.input-container input {*/
+    /*    box-sizing: border-box;*/
+    /*    width: 100%;*/
+    /*    height: 35px;*/
+    /*    border-radius: 10px;*/
+    /*    border: rgba(99, 99, 99, 0.39) solid 2px;*/
+    /*    font-family: inherit;*/
+    /*    color: inherit;*/
+    /*    outline: none;*/
+    /*}*/
 
     .input-container input, label {
         padding: 10px;

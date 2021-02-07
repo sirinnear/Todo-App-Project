@@ -1,5 +1,7 @@
 <template>
-    <h1>This is the Todo page.</h1>
+    <div class="outer-container">
+        <input type="text" placeholder="What are you going to do?">
+    </div>
 </template>
 
 <script>
@@ -9,5 +11,13 @@
 </script>
 
 <style scoped>
-
+    .outer-container {
+        margin: 100px 300px;
+    }
+    /*input[type=text] {*/
+    /*    box-sizing: border-box;*/
+    /*    width: 100%;*/
+    /*    outline: none;*/
+    /*    border: white solid 1px;*/
+    /*}*/
 </style>

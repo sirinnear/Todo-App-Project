@@ -8,15 +8,28 @@ body {
     background-color: white;
     border: white solid 9px;
     border-radius: 10px;
+    font-family: Verdana;
+    font-size: 15px;
 }
 
 .inner-container {
     background-color: rgba(191, 227, 255, 0.41);
     border: white solid 1px;
     border-radius: 5px;
-    font-family: Verdana;
-    font-size: 15px;
-    border-radius-inner: 3px;
+    font-family: inherit;
+    font-size: inherit;
 }
 
+input[type=text], input[type=password] {
+    box-sizing: border-box;
+    width: 100%;
+    height: 35px;
+    border-radius: 10px;
+    border: rgba(99, 99, 99, 0.39) solid 2px;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    outline: none;
+    padding: 10px;
+}
 
