@@ -14,6 +14,7 @@
             </div>
             <button class="button">Login</button>
             <button class="button" style="margin: 0px">Register</button>
+            <p id="placeholder"></p>
         </div>
     </div>
 </template>
