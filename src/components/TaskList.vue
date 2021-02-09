@@ -1,5 +1,16 @@
 <template>
     <ul class="todo-list">
+<!--        <li-->
+<!--                v-for="todo in todos()"-->
+<!--                v-bind:key="todo.id">-->
+<!--&lt;!&ndash;            <div>&ndash;&gt;-->
+<!--&lt;!&ndash;                <input type="checkbox">&ndash;&gt;-->
+<!--&lt;!&ndash;                <label>{{ todo.text }}</label>&ndash;&gt;-->
+<!--&lt;!&ndash;                <button class="date">Date</button>&ndash;&gt;-->
+<!--&lt;!&ndash;                <button class="delete">Delete</button>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--            <p>{{todo.text}}</p>-->
+<!--        </li>-->
         <li>
             <input type="checkbox">
             <label>Task 1</label>
@@ -12,14 +23,18 @@
             <button class="date">Date</button>
             <button class="delete">Delete</button>
         </li>
-<!--        <ul class="task">Task 2</ul>-->
     </ul>
 </template>
 
 <script>
 
     export default {
-        name: "TaskList"
+        name: "TaskList",
+        computed: {
+            todos() {
+                return this.$store.state.todos.todos;
+            }
+        }
     }
 </script>
 

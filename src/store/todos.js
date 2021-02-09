@@ -1,6 +1,9 @@
 export default {
     state: {
-        todos: [],
+        todos: [
+            { text: 'Task 1', isDone: false },
+            { text: 'Task 2', isDone: false }
+        ],
     },
 
     mutation: {

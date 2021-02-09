@@ -13,7 +13,15 @@
 
     export default {
         name: "Todo",
-        components: {TaskList}
+        components: {TaskList},
+        data() {
+            return {
+
+            }
+        },
+        methods: {
+
+        },
     }
 </script>
 
@@ -32,8 +40,5 @@
     input[type=text] {
         height: 40px;
         font-size: 18px;
-        /*border: white solid 1px;*/
-        /*border-radius: 5px;*/
-        /*background-color: rgba(202, 202, 202, 0.24);*/
     }
 </style>
