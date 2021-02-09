@@ -3,11 +3,13 @@
         <li>
             <input type="checkbox">
             <label>Task 1</label>
+            <button class="date">Date</button>
             <button class="delete">Delete</button>
         </li>
         <li>
             <input type="checkbox">
             <label>Task 2</label>
+            <button class="date">Date</button>
             <button class="delete">Delete</button>
         </li>
 <!--        <ul class="task">Task 2</ul>-->
@@ -40,7 +42,7 @@
 
     .todo-list input[type=checkbox] {
         text-align: center;
-        width: 40px;
+        width: 20px;
         position: absolute;
     }
 
@@ -57,6 +59,13 @@
         position: absolute;
         width: 40px;
         right: 10px;
-        top: 9px;
+        top: 10px;
+    }
+
+    .todo-list .date {
+        position: absolute;
+        width: 40px;
+        right: 60px;
+        top: 10px;
     }
 </style>
