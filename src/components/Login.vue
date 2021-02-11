@@ -40,6 +40,8 @@
                                 class="rounded-xl"></v-text-field>
                         <v-btn block dark class="green lighten-2 rounded-xl">Login with Email</v-btn>
                         <v-btn block dark class="blue lighten-1 mt-2 rounded-xl">Login with Google</v-btn>
+                        <v-divider class="my-4 mx-auto" width="300"></v-divider>
+                        <v-btn block dark class="grey lighten-1 rounded-xl">Register with Email</v-btn>
                         <!--                        <v-btn dark class="blue lighten-2 ml-2">Register</v-btn>-->
                     </v-container>
 
