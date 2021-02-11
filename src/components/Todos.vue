@@ -14,9 +14,30 @@
                 <v-icon right> mdi-logout </v-icon>
             </v-btn>
         </v-app-bar>
-        <v-container>
-            <v-text-field></v-text-field>
-        </v-container>
+        <v-main>
+            <v-card
+            min-width="300"
+            max-width="600"
+            class="mx-auto mt-15 rounded-xl">
+                <v-container fluid>
+                    <v-text-field
+                    solo
+                    label="What will you be doing?"
+                    class="mt-3 rounded-xl"></v-text-field>
+                    <v-row class="mx-1 mt-n4">
+                        <v-col>
+                            <p class="mt-2">0 item(s) left</p>
+                        </v-col>
+                        <v-col>
+                            <p class="mt-2">0 item(s) completed</p>
+                        </v-col>
+                        <v-col>
+                            <v-btn>Clear completed</v-btn>
+                        </v-col>
+                    </v-row>
+                </v-container>
+            </v-card>
+        </v-main>
     </v-app>
 </template>
 
