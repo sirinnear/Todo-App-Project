@@ -6,9 +6,13 @@
             class="mt-16 mx-auto elevation-3 rounded-lg"
             max-width="500"
             min-width="300">
-                <v-card-title>Login</v-card-title>
+                <v-card-title class="justify-center display-1">Login</v-card-title>
                 <v-form>
                     <v-container>
+                        <v-alert
+                        dense
+                        text
+                        type="error">Invalid email or password</v-alert>
                         <v-text-field
                                 dense
                                 outlined
