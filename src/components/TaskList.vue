@@ -1,5 +1,5 @@
 <template>
-    <ul class="todo-list">
+<!--    <ul class="todo-list">-->
 <!--        <li-->
 <!--                v-for="todo in todos()"-->
 <!--                v-bind:key="todo.id">-->
@@ -11,19 +11,75 @@
 <!--&lt;!&ndash;            </div>&ndash;&gt;-->
 <!--            <p>{{todo.text}}</p>-->
 <!--        </li>-->
-        <li>
-            <input type="checkbox">
-            <label>Task 1</label>
-            <button class="date">Date</button>
-            <button class="delete">Delete</button>
-        </li>
-        <li>
-            <input type="checkbox">
-            <label>Task 2</label>
-            <button class="date">Date</button>
-            <button class="delete">Delete</button>
-        </li>
-    </ul>
+<!--        <li>-->
+<!--            <input type="checkbox">-->
+<!--            <label>Task 1</label>-->
+<!--            <button class="date">Date</button>-->
+<!--            <button class="delete">Delete</button>-->
+<!--        </li>-->
+<!--        <li>-->
+<!--            <input type="checkbox">-->
+<!--            <label>Task 2</label>-->
+<!--            <button class="date">Date</button>-->
+<!--            <button class="delete">Delete</button>-->
+<!--        </li>-->
+<!--    </ul>-->
+    <div>
+        <v-card
+        class="mx-3 rounded-xl pr-3 mb-4 blue lighten-4">
+            <v-card-text class="text-center">
+                <v-row align="center" justify="center">
+                    <v-col cols="1">
+                        <v-checkbox/>
+                    </v-col>
+                    <v-col>
+                        <h2>Task 1</h2>
+                    </v-col>
+                    <v-col cols="1">
+                        <v-btn text icon>
+                            <v-icon>
+                                mdi-calendar
+                            </v-icon>
+                        </v-btn>
+                    </v-col>
+                    <v-col cols="1">
+                        <v-btn text icon>
+                            <v-icon>
+                                mdi-delete
+                            </v-icon>
+                        </v-btn>
+                    </v-col>
+                </v-row>
+            </v-card-text>
+        </v-card>
+        <v-card
+                class="mx-3 rounded-xl pr-3 mb-4 blue lighten-4">
+            <v-card-text class="text-center">
+                <v-row align="center" justify="center">
+                    <v-col cols="1">
+                        <v-checkbox/>
+                    </v-col>
+                    <v-col>
+                        <h2>Task 2</h2>
+                    </v-col>
+                    <v-col cols="1">
+                        <v-btn text icon>
+                            <v-icon>
+                                mdi-calendar
+                            </v-icon>
+                        </v-btn>
+                    </v-col>
+                    <v-col cols="1">
+                        <v-btn text icon>
+                            <v-icon>
+                                mdi-delete
+                            </v-icon>
+                        </v-btn>
+                    </v-col>
+                </v-row>
+            </v-card-text>
+        </v-card>
+    </div>
 </template>
 
 <script>
