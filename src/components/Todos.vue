@@ -9,31 +9,7 @@
                             class="mt-10 px-4 rounded-xl"
                             min-width="600">
                         <v-container>
-                            <v-text-field
-                                    outlined
-                                    rounded
-                                    label="What are you going to do?"
-                                    class="mt-3 mb-n5"
-                                    ></v-text-field>
-                            <v-row
-                                    class="text-right pl-4 mt-2">
-                                <v-col cols="3">
-                                    <strong>Remaining: 0</strong>
-                                </v-col>
-                                <v-col cols="4">
-                                    <strong>Completed: 0</strong>
-                                </v-col>
-                                <v-col cols="5" class="mt-n5">
-                                    <v-spacer/>
-                                    <v-switch
-                                            class="mr-2 pl-4"
-                                            label="Hide completed"></v-switch>
-                                </v-col>
-                            </v-row>
-                            <v-row>
-                                <v-btn
-                                        class="mx-auto mt-n2 mb-4">Clear completed</v-btn>
-                            </v-row>
+                            <TodoHeader/>
                             <v-divider class="my-4 mx-5"/>
                             <TaskList/>
                         </v-container>
@@ -47,25 +23,13 @@
 </template>
 
 <script>
-    // import TaskList from '@/components/TaskList';
-
     import TaskList from "@/components/TaskList";
     import TodoAppBar from "@/components/TodoAppBar";
+    import TodoHeader from "@/components/TodoHeader";
 
     export default {
         name: "Todo",
-        components: {TodoAppBar, TaskList},
-        data() {
-            return {
-                text: "",
-            }
-        },
-        methods: {
-            createTodo(text) {
-                this.$store.dispatch("createTodo", { text: text, isDone: false });
-                this.text = "";
-            }
-        },
+        components: {TodoHeader, TodoAppBar, TaskList}
     }
 </script>
 
