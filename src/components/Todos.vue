@@ -1,12 +1,6 @@
 <template>
     <v-app>
-        <v-app-bar class="blue lighten-2" flat app>
-            <v-spacer></v-spacer>
-            <v-btn plain dark class="mr-2">
-                Logout
-                <v-icon right> mdi-logout </v-icon>
-            </v-btn>
-        </v-app-bar>
+        <TodoAppBar/>
         <v-main>
             <v-row>
                 <v-col/>
@@ -19,7 +13,8 @@
                                     outlined
                                     rounded
                                     label="What are you going to do?"
-                                    class="mt-3 mb-n5"></v-text-field>
+                                    class="mt-3 mb-n5"
+                                    ></v-text-field>
                             <v-row
                                     class="text-right pl-4 mt-2">
                                 <v-col cols="3">
@@ -55,16 +50,21 @@
     // import TaskList from '@/components/TaskList';
 
     import TaskList from "@/components/TaskList";
+    import TodoAppBar from "@/components/TodoAppBar";
+
     export default {
         name: "Todo",
-        components: {TaskList},
+        components: {TodoAppBar, TaskList},
         data() {
             return {
-
+                text: "",
             }
         },
         methods: {
-
+            createTodo(text) {
+                this.$store.dispatch("createTodo", { text: text, isDone: false });
+                this.text = "";
+            }
         },
     }
 </script>

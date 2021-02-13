@@ -8,7 +8,7 @@ export default {
     },
 
     mutation: {
-        addTodo(state, todo) {
+        createTodo(state, todo) {
             this.$store.state.todos.push(todo)
         }
     },
