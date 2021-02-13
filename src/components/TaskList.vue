@@ -1,84 +1,36 @@
 <template>
-<!--    <ul class="todo-list">-->
-<!--        <li-->
-<!--                v-for="todo in todos()"-->
-<!--                v-bind:key="todo.id">-->
-<!--&lt;!&ndash;            <div>&ndash;&gt;-->
-<!--&lt;!&ndash;                <input type="checkbox">&ndash;&gt;-->
-<!--&lt;!&ndash;                <label>{{ todo.text }}</label>&ndash;&gt;-->
-<!--&lt;!&ndash;                <button class="date">Date</button>&ndash;&gt;-->
-<!--&lt;!&ndash;                <button class="delete">Delete</button>&ndash;&gt;-->
-<!--&lt;!&ndash;            </div>&ndash;&gt;-->
-<!--            <p>{{todo.text}}</p>-->
-<!--        </li>-->
-<!--        <li>-->
-<!--            <input type="checkbox">-->
-<!--            <label>Task 1</label>-->
-<!--            <button class="date">Date</button>-->
-<!--            <button class="delete">Delete</button>-->
-<!--        </li>-->
-<!--        <li>-->
-<!--            <input type="checkbox">-->
-<!--            <label>Task 2</label>-->
-<!--            <button class="date">Date</button>-->
-<!--            <button class="delete">Delete</button>-->
-<!--        </li>-->
-<!--    </ul>-->
     <div>
-        <v-card
-        class="mx-3 rounded-xl pr-3 mb-4 blue lighten-4">
-            <v-card-text class="text-center">
-                <v-row align="center" justify="center">
-                    <v-col cols="1">
-                        <v-checkbox/>
-                    </v-col>
-                    <v-col>
-                        <h2>Task 1</h2>
-                    </v-col>
-                    <v-col cols="1">
-                        <v-btn text icon>
-                            <v-icon>
-                                mdi-calendar
-                            </v-icon>
-                        </v-btn>
-                    </v-col>
-                    <v-col cols="1">
-                        <v-btn text icon>
-                            <v-icon>
-                                mdi-delete
-                            </v-icon>
-                        </v-btn>
-                    </v-col>
-                </v-row>
-            </v-card-text>
-        </v-card>
-        <v-card
-                class="mx-3 rounded-xl pr-3 mb-4 blue lighten-4">
-            <v-card-text class="text-center">
-                <v-row align="center" justify="center">
-                    <v-col cols="1">
-                        <v-checkbox/>
-                    </v-col>
-                    <v-col>
-                        <h2>Task 2</h2>
-                    </v-col>
-                    <v-col cols="1">
-                        <v-btn text icon>
-                            <v-icon>
-                                mdi-calendar
-                            </v-icon>
-                        </v-btn>
-                    </v-col>
-                    <v-col cols="1">
-                        <v-btn text icon>
-                            <v-icon>
-                                mdi-delete
-                            </v-icon>
-                        </v-btn>
-                    </v-col>
-                </v-row>
-            </v-card-text>
-        </v-card>
+        <v-item-group v-for="(task, i) in tasks" :key="i">
+            <v-item size="12">
+                <v-card
+                        class="mx-3 rounded-xl pr-3 mb-4 grey lighten-3">
+                    <v-card-text class="text-center custom-card">
+                        <v-row align="center" justify="center">
+                            <v-col cols="1">
+                                <v-checkbox/>
+                            </v-col>
+                            <v-col>
+                                <h3>{{ task.text }}</h3>
+                            </v-col>
+                            <v-col cols="1">
+                                <v-btn text icon>
+                                    <v-icon>
+                                        mdi-calendar
+                                    </v-icon>
+                                </v-btn>
+                            </v-col>
+                            <v-col cols="1">
+                                <v-btn text icon>
+                                    <v-icon>
+                                        mdi-delete
+                                    </v-icon>
+                                </v-btn>
+                            </v-col>
+                        </v-row>
+                    </v-card-text>
+                </v-card>
+            </v-item>
+        </v-item-group>
     </div>
 </template>
 
@@ -87,7 +39,7 @@
     export default {
         name: "TaskList",
         computed: {
-            todos() {
+            tasks() {
                 return this.$store.state.todos.todos;
             }
         }
@@ -95,48 +47,8 @@
 </script>
 
 <style scoped>
-    .todo-list {
-
-        list-style: none;
-        margin: 10px 0px;
-        padding: 0px;
-    }
-
-    .todo-list li {
-        position: relative;
-        background-color: white;
-        margin: 5px;
-        border-radius: 5px;
-        /*height: 20px;*/
-        padding: 10px;
-    }
-
-    .todo-list input[type=checkbox] {
-        text-align: center;
-        width: 20px;
-        position: absolute;
-    }
-
-    .todo-list label {
-        text-align: center;
-        word-break: break-all;
-        line-height: 1.2;
-        /*width: 200px;*/
-        /*padding: 15px 15px 15px 60px;*/
-        display: block;
-    }
-
-    .todo-list .delete {
-        position: absolute;
-        width: 40px;
-        right: 10px;
-        top: 10px;
-    }
-
-    .todo-list .date {
-        position: absolute;
-        width: 40px;
-        right: 60px;
-        top: 10px;
+    .custom-card {
+        padding-top: 4px;
+        padding-bottom: 4px;
     }
 </style>
