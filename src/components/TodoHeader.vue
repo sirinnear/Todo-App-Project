@@ -5,7 +5,8 @@
                 rounded
                 label="What are you going to do?"
                 class="mt-3 mb-n5"
-                v-on:keyup.enter="createTodo"
+                v-model="text"
+                @keyup.enter="createTodo"
         ></v-text-field>
         <v-row
                 class="text-right pl-4 mt-2">
@@ -39,7 +40,7 @@
         },
         methods: {
             createTodo() {
-                this.$store.dispatch('/createTodo', { text: this.text.trim(), isDone: false });
+                this.$store.dispatch('createTodo', { text: this.text.trim(), isDone: false });
                 this.text = "";
             }
         },

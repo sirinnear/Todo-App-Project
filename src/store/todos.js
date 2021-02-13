@@ -6,10 +6,15 @@ export default {
             { text: 'Task 3', isDone: false },
         ],
     },
+    mutations: {
+      addTodo(state, todo) {
+          state.todos.push(todo)
+      }
+    },
 
-    mutation: {
-        createTodo(state, todo) {
-            this.$store.state.todos.push(todo)
+    actions: {
+        createTodo(context, todo) {
+            context.commit('addTodo', todo);
         }
     },
 }
