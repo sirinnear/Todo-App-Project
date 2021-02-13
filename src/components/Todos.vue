@@ -11,7 +11,7 @@
                         <v-container>
                             <TodoHeader/>
                             <v-divider class="my-4 mx-5"/>
-                            <TaskList/>
+                            <TodoList/>
                         </v-container>
                     </v-card>
                 </v-col>
@@ -23,13 +23,13 @@
 </template>
 
 <script>
-    import TaskList from "@/components/TaskList";
+    import TodoList from "@/components/TodoList";
     import TodoAppBar from "@/components/TodoAppBar";
     import TodoHeader from "@/components/TodoHeader";
 
     export default {
         name: "Todo",
-        components: {TodoHeader, TodoAppBar, TaskList}
+        components: {TodoHeader, TodoAppBar, TodoList}
     }
 </script>
 

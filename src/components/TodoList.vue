@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-item-group v-for="(task, i) in tasks" :key="i">
+        <v-item-group v-for="(todo, i) in todos" :key="i">
             <v-item size="12">
                 <v-card
                         class="mx-3 rounded-xl pr-3 mb-4 grey lighten-3">
@@ -10,7 +10,7 @@
                                 <v-checkbox/>
                             </v-col>
                             <v-col>
-                                <h3>{{ task.text }}</h3>
+                                <h3>{{ todo.text }}</h3>
                             </v-col>
                             <v-col cols="1">
                                 <v-btn text icon>
@@ -37,9 +37,9 @@
 <script>
 
     export default {
-        name: "TaskList",
+        name: "TodoList",
         computed: {
-            tasks() {
+            todos() {
                 return this.$store.state.todos.todos;
             }
         }
