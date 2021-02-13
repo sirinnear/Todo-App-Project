@@ -11,10 +11,10 @@
         <v-row
                 class="text-right pl-4 mt-2">
             <v-col cols="3">
-                <strong>Remaining: 0</strong>
+                <strong>Remaining: {{ $store.getters["activeTodos"].length }}</strong>
             </v-col>
             <v-col cols="4">
-                <strong>Completed: 0</strong>
+                <strong>Completed: {{ $store.getters["completedTodos"].length }}</strong>
             </v-col>
             <v-col cols="5" class="mt-n5">
                 <v-spacer/>
@@ -44,6 +44,8 @@
                 this.text = "";
             }
         },
+        computed: {
+        }
     }
 </script>
 
