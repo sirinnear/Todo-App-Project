@@ -3,24 +3,29 @@
         <v-item-group v-for="(todo, i) in todos" :key="i">
             <v-item size="12">
                 <v-card
-                        class="mx-3 rounded-xl pr-3 mb-4 grey lighten-3">
+                        class="mx-3 rounded-xl pr-3 mb-4"
+                        :class="todo.isDone ? 'grey lighten-5': 'grey lighten-3' ">
                     <v-card-text class="text-center custom-card">
                         <v-row align="center" justify="center">
                             <v-col cols="1">
-                                <v-checkbox/>
+                                <v-checkbox
+                                    v-model="todo.isDone"
+                                    color="grey lighten-1"/>
                             </v-col>
                             <v-col>
-                                <h3>{{ todo.text }}</h3>
+                                <h3 :class="todo.isDone ? ['grey--text text--lighten-1', 'text-decoration-line-through'] : ''">{{ todo.text }}</h3>
                             </v-col>
                             <v-col cols="1">
-                                <v-btn text icon>
+                                <v-btn text icon
+                               :class="{ 'grey--text text--lighten-1': todo.isDone }">
                                     <v-icon>
                                         mdi-calendar
                                     </v-icon>
                                 </v-btn>
                             </v-col>
                             <v-col cols="1">
-                                <v-btn text icon>
+                                <v-btn text icon
+                                :class="{ 'grey--text text--lighten-1': todo.isDone }">
                                     <v-icon>
                                         mdi-delete
                                     </v-icon>
