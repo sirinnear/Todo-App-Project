@@ -10,11 +10,17 @@ export default {
       addTodo(state, todo) {
           state.todos.push(todo)
       },
+        setTodos(state, newTodos) {
+          state.todos = newTodos;
+        }
     },
 
     actions: {
         createTodo(context, todo) {
             context.commit('addTodo', todo);
+        },
+        clearCompleted(context) {
+            context.commit('setTodos', context.state.todos.filter(t => !t.isDone ));
         }
     },
 
