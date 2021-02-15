@@ -59,7 +59,8 @@
                             </v-col>
                             <v-col cols="1">
                                 <v-btn text icon
-                                :class="{ 'grey--text text--lighten-1': todo.isDone }">
+                                :class="{ 'grey--text text--lighten-1': todo.isDone }"
+                                @click="deleteTodo(i)">
                                     <v-icon>
                                         mdi-delete
                                     </v-icon>
@@ -84,9 +85,8 @@
         },
 
         methods: {
-            close(i) {
-                this.modal[i] = false;
-                this.$emit("close");
+            deleteTodo(idx) {
+                this.$store.dispatch('deleteTodo', idx);
             }
         },
 

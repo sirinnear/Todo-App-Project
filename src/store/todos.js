@@ -13,6 +13,9 @@ export default {
         setTodos(state, newTodos) {
           state.todos = newTodos;
         },
+        removeTodo(state, idx) {
+            state.todos.splice(idx, 1);
+        }
     },
 
     actions: {
@@ -22,6 +25,9 @@ export default {
         clearCompleted(context) {
             context.commit('setTodos', context.state.todos.filter(t => !t.isDone ));
         },
+        deleteTodo(context, idx) {
+            context.commit('removeTodo', idx);
+        }
 
     },
 
