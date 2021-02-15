@@ -13,7 +13,13 @@
                                     color="grey lighten-1"/>
                             </v-col>
                             <v-col>
-                                <h3 :class="todo.isDone ? ['grey--text text--lighten-1', 'text-decoration-line-through'] : ''">{{ todo.text }}</h3>
+                                <h3 :class="todo.isDone ? ['grey--text text--lighten-1', 'text-decoration-line-through'] : ''"
+                                    class="my-2">
+                                    {{ todo.text }}
+                                </h3>
+                                <overline :class="todo.isDone ? ['grey--text text--lighten-1', 'text-decoration-line-through'] : ''">
+                                    Due: {{ formatDate(todo.date) }}
+                                </overline>
                             </v-col>
                             <v-col cols="1">
                                     <v-dialog
@@ -75,6 +81,7 @@
 </template>
 
 <script>
+    import moment from 'moment';
 
     export default {
         name: "TodoList",
@@ -87,6 +94,9 @@
         methods: {
             deleteTodo(idx) {
                 this.$store.dispatch('deleteTodo', idx);
+            },
+            formatDate(date) {
+                return moment(date).format('MMM DD, YYYY');
             }
         },
 
