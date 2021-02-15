@@ -1,18 +1,18 @@
 export default {
     state: {
         todos: [
-            { text: 'Task 1', isDone: false },
-            { text: 'Task 2', isDone: false },
-            { text: 'Task 3', isDone: false },
+            { text: 'Task 1', isDone: false, date: new Date().toISOString().substr(0, 10) },
+            { text: 'Task 2', isDone: false, date: new Date().toISOString().substr(0, 10) },
+            { text: 'Task 3', isDone: false, date: new Date().toISOString().substr(0, 10) },
         ],
     },
     mutations: {
-      addTodo(state, todo) {
+        addTodo(state, todo) {
           state.todos.push(todo)
-      },
+        },
         setTodos(state, newTodos) {
           state.todos = newTodos;
-        }
+        },
     },
 
     actions: {
@@ -21,7 +21,8 @@ export default {
         },
         clearCompleted(context) {
             context.commit('setTodos', context.state.todos.filter(t => !t.isDone ));
-        }
+        },
+
     },
 
     getters: {

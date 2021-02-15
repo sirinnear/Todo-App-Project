@@ -29,7 +29,11 @@
 
     export default {
         name: "Todo",
-        components: {TodoHeader, TodoAppBar, TodoList}
+        components: {TodoHeader, TodoAppBar, TodoList},
+        data() {
+            return {
+            }
+        }
     }
 </script>
 

@@ -9,17 +9,18 @@
                 @keyup.enter="createTodo"
         ></v-text-field>
         <v-row
-                class="text-right pl-4">
+                class="text-center pl-4">
             <v-col cols="3">
                 <strong>Remaining: {{ $store.getters["activeTodos"].length }}</strong>
             </v-col>
-            <v-col cols="4">
+            <v-col cols="3">
                 <strong>Completed: {{ $store.getters["completedTodos"].length }}</strong>
             </v-col>
-            <v-col cols="5" class="mt-n5">
+            <v-col class="mt-n5">
                 <v-spacer/>
                 <v-switch
-                        class="mr-2 pl-4"
+                        class="mr-2 pl-15"
+                        inset
                         label="Hide completed"></v-switch>
             </v-col>
         </v-row>

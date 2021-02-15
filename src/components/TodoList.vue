@@ -1,4 +1,4 @@
-<template>
+<template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
     <div>
         <v-item-group v-for="(todo, i) in todos" :key="i">
             <v-item size="12">
@@ -16,12 +16,46 @@
                                 <h3 :class="todo.isDone ? ['grey--text text--lighten-1', 'text-decoration-line-through'] : ''">{{ todo.text }}</h3>
                             </v-col>
                             <v-col cols="1">
-                                <v-btn text icon
-                               :class="{ 'grey--text text--lighten-1': todo.isDone }">
-                                    <v-icon>
-                                        mdi-calendar
-                                    </v-icon>
-                                </v-btn>
+                                    <v-dialog
+                                            :ref="'dialog' + i"
+                                            v-model="modal[i]"
+                                            :return-value.sync="todo.date"
+                                            persistent
+                                            width="290px"
+                                    >
+                                        <template v-slot:activator="{ }">
+                                            <v-btn text icon
+                                                   v-model="todo.date"
+                                                   :class="{ 'grey--text text--lighten-1': todo.isDone }"
+                                                    @click.stop="$set(modal, i, true)"
+                                                    :active="false">
+                                                <v-icon>
+                                                    mdi-calendar
+                                                </v-icon>
+                                            </v-btn>
+                                        </template>
+                                        <v-date-picker
+                                                v-model="todo.date"
+                                                scrollable
+                                                color="blue lighten-1"
+                                        >
+                                            <v-spacer></v-spacer>
+                                            <v-btn
+                                                    text
+                                                    color="primary"
+                                                    @click.stop="$set(modal, i, false)"
+                                            >
+                                                Cancel
+                                            </v-btn>
+                                            <v-btn
+                                                    text
+                                                    color="primary"
+                                                    @click="$refs['dialog' + i][0].save(todo.date)"
+                                            >
+                                                OK
+                                            </v-btn>
+                                        </v-date-picker>
+                                    </v-dialog>
                             </v-col>
                             <v-col cols="1">
                                 <v-btn text icon
@@ -43,6 +77,19 @@
 
     export default {
         name: "TodoList",
+        data() {
+            return {
+                modal: {},
+            }
+        },
+
+        methods: {
+            close(i) {
+                this.modal[i] = false;
+                this.$emit("close");
+            }
+        },
+
         computed: {
             todos() {
                 return this.$store.state.todos.todos;
@@ -55,5 +102,9 @@
     .custom-card {
         padding-top: 4px;
         padding-bottom: 4px;
+    }
+
+    .v-btn--active::before {
+        opacity: 0 !important;
     }
 </style>
