@@ -21,6 +21,7 @@
                 <v-switch
                         class="mr-2 pl-15"
                         inset
+                        v-model="hideCompleted"
                         label="Hide completed"></v-switch>
             </v-col>
         </v-row>
@@ -37,6 +38,7 @@
         data() {
             return {
                 text: "",
+                hideCompleted: false,
             }
         },
         methods: {
@@ -46,9 +48,16 @@
             },
             clearCompleted() {
                 this.$store.dispatch('clearCompleted');
-            }
+            },
         },
         computed: {
+        },
+
+        watch: {
+            hideCompleted(newVal) {
+                this.hideCompleted = newVal;
+                this.$parent.$emit('hide', this.hideCompleted);
+            }
         }
     }
 </script>

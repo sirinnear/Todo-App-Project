@@ -4,7 +4,8 @@
             <v-item size="12">
                 <v-card
                         class="mx-3 rounded-xl pr-3 mb-4"
-                        :class="todo.isDone ? 'grey lighten-5': 'grey lighten-3' ">
+                        :class="todo.isDone ? 'blue lighten-5': 'blue lighten-4' "
+                        v-if="!toggleHide(todo) || !todo.isDone ">
                     <v-card-text class="text-center custom-card">
                         <v-row align="center" justify="center">
                             <v-col cols="1">
@@ -17,9 +18,9 @@
                                     class="my-2">
                                     {{ todo.text }}
                                 </h3>
-                                <overline :class="todo.isDone ? ['grey--text text--lighten-1', 'text-decoration-line-through'] : ''">
+                                <p :class="todo.isDone ? ['grey--text text--lighten-1', 'text-decoration-line-through'] : ''">
                                     Due: {{ formatDate(todo.date) }}
-                                </overline>
+                                </p>
                             </v-col>
                             <v-col cols="1">
                                     <v-dialog
@@ -88,6 +89,7 @@
         data() {
             return {
                 modal: {},
+                hideCompleted: false,
             }
         },
 
@@ -97,14 +99,19 @@
             },
             formatDate(date) {
                 return moment(date).format('MMM DD, YYYY');
+            },
+            toggleHide() {
+                this.$parent.$on('hide', d => this.hideCompleted = d);
+                console.log(this.hideCompleted);
+                return this.hideCompleted;
             }
         },
 
         computed: {
             todos() {
                 return this.$store.state.todos.todos;
-            }
-        }
+            },
+        },
     }
 </script>
 
