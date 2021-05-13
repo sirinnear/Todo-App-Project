@@ -6,6 +6,12 @@
                         class="mx-3 rounded-xl pr-3 mb-4"
                         :class="todo.isDone ? 'blue lighten-5': 'blue lighten-4' "
                         v-if="!toggleHide(todo) || !todo.isDone ">
+<!--                    <v-progress-linear-->
+<!--                            :value="todo.isDone ? 100 : 0"-->
+<!--                            rounded-->
+<!--                            class="mx-auto"-->
+<!--                            width="290"-->
+<!--                    ></v-progress-linear>-->
                     <v-card-text class="text-center custom-card">
                         <v-row align="center" justify="center">
                             <v-col cols="1">

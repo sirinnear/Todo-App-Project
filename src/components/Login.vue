@@ -9,10 +9,10 @@
                 <v-card-title class="justify-center display-1">Login</v-card-title>
                 <v-form>
                     <v-container>
-                        <v-alert
-                        dense
-                        text
-                        type="error">Invalid email or password</v-alert>
+<!--                        <v-alert-->
+<!--                        dense-->
+<!--                        text-->
+<!--                        type="error">Invalid email or password</v-alert>-->
                         <v-text-field
                                 dense
                                 outlined
